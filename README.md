@@ -24,9 +24,7 @@ pyhton ./app/main.py
 ```
 
 ## Usage
-
-query the API at http://
-
+http://0.0.0.0:8000/query?query=acne
 
 ## Authors
 
