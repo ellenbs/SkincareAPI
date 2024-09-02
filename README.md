@@ -28,6 +28,8 @@ http://0.0.0.0:8000/query?query=acne
 
 ## Output
 
+```bash
+
 {
   "results": [
     {
@@ -68,6 +70,7 @@ http://0.0.0.0:8000/query?query=acne
     }
     ]
 }
+```
 ## Authors
 
 Ellen Shen e Joao Magalhaes
