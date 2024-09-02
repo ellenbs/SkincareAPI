@@ -5,4 +5,3 @@ scikit-learn
 httpx
 pandas
 numpy
-os

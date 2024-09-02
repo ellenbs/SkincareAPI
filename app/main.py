@@ -9,6 +9,7 @@ def load_reviews():
     current_dir = os.path.dirname(__file__)
     route = os.path.join(current_dir, "../data/sephora_reviews.csv")
     reviews = pd.read_csv(route)
+    reviews = reviews.drop_duplicates(subset='Review')
     return reviews
 
 def initialize_vectorizer(reviews):
@@ -33,10 +34,11 @@ def query_route(query: str = Query(..., description="Search query")):
     results = []
     for _, row in sorted_df.iterrows():
         results.append({
-            'title': row['Nome'],
-            'content': row['Review'][:500],
-            'relevance': row['Relevance Score']
-        })
+            'Produto': row['Nome'],
+            'Marca': row['Marca'],
+            'Review': row['Review'],
+            'Relevancia': row['Relevance Score']
+        })        
 
     return {"results": results, "message": "OK"}
 
