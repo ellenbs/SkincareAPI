@@ -4,7 +4,7 @@ from app.main import app
 client = TestClient(app)
 
 def test_query_yields_10_results():
-    response = client.get("/query?query=a fun love story")
+    response = client.get("/query?query=acne")
     json_response = response.json()
     
     assert response.status_code == 200
@@ -12,7 +12,7 @@ def test_query_yields_10_results():
     assert json_response["message"] == "OK"
 
 def test_query_yields_few_results():
-    response = client.get("/query?query=zombie apocalypse")
+    response = client.get("/query?query=pele madura")
     json_response = response.json()
     
     assert response.status_code == 200
@@ -20,10 +20,13 @@ def test_query_yields_few_results():
     assert json_response["message"] == "OK"
 
 def test_query_yields_non_obvious_results():
-    response = client.get("/query?query=Many birds migrate long distances")
+    response = client.get("/query?query=manchas na pele")
     json_response = response.json()
     
-    # TODO: add assert to verify non obvious results
     assert response.status_code == 200
     assert len(json_response["results"]) > 0
+    assert json_response["results"][0]["title"] == "SÉRUM ILUMINADOR ANTIMANCHAS CAUDALIE VINOPERFECT ALTERNATIVA À VITAMINA C"
+    assert json_response["results"][1]["title"] == "ESPUMA DE LIMPEZA SHISEIDO DEEP CLEANSING FOAM"
+    assert json_response["results"][2]["title"] == "ESSÊNCIA DE TRATAMENTO CLARINS EXTRA-FIRMING"
+    assert json_response["results"][3]["title"] == "SÉRUM HIDRATANTE DRUNK ELEPHANT B-HYDRA INTENSIVE HYDRATION SERU"
     assert json_response["message"] == "OK"
