@@ -6,6 +6,10 @@ Skincare API
 
 O objetivo do projeto é fornecer uma maneira eficiente de buscar e classificar reviews de produtos, retornando os mais relevantes de acordo com a consulta fornecida pelo usuário. Isso pode ser útil, por exemplo, para analisar feedbacks de clientes e tomar decisões informadas com base em suas opiniões.
 
+## DataBase
+
+A base de dados foi retirada via web scraping do site https://www.sephora.com.br/ e contém informações sobre produtos de skincare, como nome, marca, review e relevância.
+
 ## Installation
 
 ```bash
