@@ -4,8 +4,7 @@ Skincare API
 
 ## Description
 
-This project is a simple API that uses NLP to recommend skincare products based on the user's skin type and concerns. The API uses a pre-trained BERT model to classify the user's skin type and concerns and then uses a simple recommendation system to recommend products based on the user's skin type and concerns. The API is built using the FastAPI framework and the Hugging Face Transformers library. 
-
+O objetivo do projeto é fornecer uma maneira eficiente de buscar e classificar reviews de produtos, retornando os mais relevantes de acordo com a consulta fornecida pelo usuário. Isso pode ser útil, por exemplo, para analisar feedbacks de clientes e tomar decisões informadas com base em suas opiniões.
 
 ## Installation
 
