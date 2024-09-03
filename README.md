@@ -6,6 +6,18 @@ Skincare API
 
 O objetivo do projeto é fornecer uma maneira eficiente de buscar e classificar reviews de produtos, retornando os mais relevantes de acordo com a consulta fornecida pelo usuário. Isso pode ser útil, por exemplo, para analisar feedbacks de clientes e tomar decisões informadas com base em suas opiniões.
 
+## Project Stricture
+
+O projeto foi dividido em 3 partes:
+
+1. **app**: Contém o código da API, que é responsável por receber a query do usuário e retornar os resultados mais relevantes.
+2. **data**: Contém a base de dados utilizada no projeto.
+3. **tests**: Contém os testes unitários do projeto.
+
+## API
+
+A API foi desenvolvida utilizando a biblioteca FastAPI, que é uma estrutura moderna e rápida para criar APIs com Python 3.6+ baseada em padrões de digitação de tipo Python padrão. A API possui um endpoint que recebe uma query do usuário e retorna os resultados mais relevantes de acordo com a consulta.
+
 ## DataBase
 
 A base de dados foi retirada via web scraping do site https://www.sephora.com.br/ e contém informações sobre produtos de skincare, como nome, marca, review e relevância.
@@ -27,8 +39,15 @@ pyhton ./app/main.py
 ```
 
 ## Usage
+
+A API possui um único endpoint que recebe uma query do usuário e retorna os resultados mais relevantes de acordo com a consulta.
+
+### Request
+
+```bash
 http://0.0.0.0:8000/query?query=acne
 
+```
 ## Output
 
 ```bash
@@ -74,6 +93,19 @@ http://0.0.0.0:8000/query?query=acne
     ]
 }
 ```
+
+## Tests
+
+Para rodar os testes unitários do projeto, utilize o comando abaixo:
+```bash
+pytest
+```
+
+1. test_query_yields_more_10_results: Testa se a query retorna mais de 10 resultados.
+2. test_query_yields_less_10_results: Testa se a query retorna menos de 10 resultados.
+3. test_query_yields_non_obvious_results: Testa se a query retorna resultados não óbvios.
+
+
 ## Authors
 
 Ellen Shen e Joao Magalhaes
